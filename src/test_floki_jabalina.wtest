@@ -1,0 +1,20 @@
+import jugador.*
+import personajes.*
+import elementos.*
+import armas.*
+
+
+test "floki usa su jabalina" {
+ 	floki.cambiarArma(jabalina)
+ 	luisa.setPersonajeActivo(mario)
+ 	luisa.aparece(tipa)
+ 	luisa.setPersonajeActivo(floki)
+ 	luisa.aparece(aurora)
+ 	luisa.aparece(castillo)
+ 	assert.equals(16,mario.valorRecolectado())
+ 	assert.equals(9, tipa.altura())
+ 	assert.that(not mario.estaFeliz())
+ 	assert.that(not aurora.estaViva())
+ 	assert.equals(150, castillo.nivelDeDefensa())
+ 	assert.that(not jabalina.estaCargada())
+ }
